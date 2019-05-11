@@ -26,7 +26,7 @@ def save_file(student):
 def read_file():
     try:
         f = open("students.txt","r")
-        for student in f.readlines():
+        for student in read_students(f):
             add_student(student)
         f.close()
     except Exception:
@@ -37,11 +37,15 @@ def var_args(name, **kwargs):
     print(name)
     print(kwargs["description"])
 """
+def read_students(f):
+    for line  in f:
+        yield line
 
 read_file()
-print_students_titlecase()
+print(students)
 
 
+""" 
 student_name = input("Enter student name: ")
 student_id = input("Enter student id: ")
 
@@ -50,5 +54,6 @@ save_file(student_name)
 
 
 print_students_titlecase()
+"""
 
 #var_args("Mark",  description ="Loves python", feedback=None, subscriber=True)
