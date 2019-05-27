@@ -14,7 +14,7 @@ class Student():
         return "Student: " + self.name
 
     def get_name_capitalized(self):
-        return self.name.capitalized()
+        return self.name.capitalize()
 
     def get_school_name(self):
         return self.school_name
@@ -26,4 +26,19 @@ class Student():
 #print(mark)
 #print(students)
 
-print(Student.school_name)
+#print(Student.school_name)
+
+class HighSchoolSudent(Student):
+    school_name = "Springfield High School"
+
+    def get_school_name(self):
+        return "This is a high school student"
+
+    def get_name_capitalized(self):
+        original_value =super().get_name_capitalized()
+        return original_value +" -HS"
+
+
+
+james = HighSchoolSudent("james")
+print(james.get_name_capitalized())
